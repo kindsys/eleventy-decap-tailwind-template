@@ -1,0 +1,15 @@
+<nav>
+  <a href="/">My Page</a>
+
+  {% set navPages = collections.all | eleventyNavigation %}
+  <ul>
+    {% for entry in navPages %}
+      <li class="inline">
+        <a
+         href="{{ entry.url }}">
+         {{ entry.title }}
+       </a>
+      </li>
+    {% endfor %}
+ </ul>
+</nav>

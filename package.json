@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/kindsys/eleventy-decap-tailwind-template/issues"
   },
-  "homepage": "https://github.com/kindsys/eleventy-decap-tailwind-template#readme"
+  "homepage": "https://github.com/kindsys/eleventy-decap-tailwind-template#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "netlify-cms-app": "^2.15.72"
+  }
 }
