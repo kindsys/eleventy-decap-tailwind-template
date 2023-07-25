@@ -2,7 +2,7 @@ backend:
   name: github
   repo: kindsys/eleventy-decap-tailwind-template
   branch: main
-  site_domain: deluxe-lamington-38577c.netlify.app
+  site_domain: 11ty-decap-starter.kind.systems
 
 publish_mode: editorial_workflow
 media_folder: "img/" # Media files will be stored in the repo under images/uploads
