@@ -9,7 +9,7 @@
     "serve:eleventy": "ELEVENTY_ENV=development eleventy --serve",
     "serve": "npm-run-all clean --parallel serve:*",
     "dev:webpack": "webpack --mode development",
-    "dev:eleventy": "ELEVENTy_ENV=development eleventy",
+    "dev:eleventy": "ELEVENTY_ENV=development eleventy",
     "build:dev": "NODE_ENV=development run-s clean dev:webpack dev:eleventy",
     "build:webpack": "webpack --mode production",
     "build:eleventy": "ELEVENTY_ENV=production eleventy",
