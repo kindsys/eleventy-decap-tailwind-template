@@ -6,4 +6,7 @@ eleventyNavigation:
     key: Home
     order: 1
 ---
-<p>Test content</p>
+
+## This is the homepage!
+
+Content can be added here.
