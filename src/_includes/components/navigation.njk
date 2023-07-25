@@ -1,5 +1,5 @@
 <nav class="flex items-center justify-between flex-wrap px-5 py-3 border-b">
-  <a href="{{ '/' | url }}" class="font-semibold text-xl tracking-tight">My Page</a>
+  <a href="{{ '/' | url }}" class="font-semibold text-xl tracking-tight">Eleventy Decap Tailwind Template</a>
 
   {% set navPages = collections.all | eleventyNavigation %}
   <ul>
@@ -8,8 +8,7 @@
         <a
          href="{{ entry.url | url }}"
          class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
-         {{'bg-black text-white' if entry.url in page.url
-         else 'text-gray-700 hover:text-gray-900'}}">
+         {{'text-gray-700 hover:text-gray-900'}}">
          {{ entry.title }}
        </a>
       </li>

@@ -1,5 +1,4 @@
 ---
-title: Contact
 layout: layouts/contact.njk
 permalink: /contact/index.html
 eleventyNavigation:

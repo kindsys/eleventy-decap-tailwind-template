@@ -1,10 +1,5 @@
 ---
-title: Home
-layout: layouts/base.njk
-permalink: /
-eleventyNavigation:
-    key: Home
-    order: 1
+layout: layouts/home.njk
 ---
 
 ## This is the homepage!
