@@ -1,7 +1,7 @@
 ---
 title: Blog
 layout: layouts/blog.njk
-permalink: /blog/
+permalink: /blog/index.html
 eleventyNavigation:
   key: Blog
   order: 2

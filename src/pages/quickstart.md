@@ -1,7 +1,7 @@
 ---
 title: Quick Start
 layout: layouts/base.njk
-permalink: /quickstart/
+permalink: /quickstart/index.html
 eleventyNavigation:
     key: Quick Start
     order: 2

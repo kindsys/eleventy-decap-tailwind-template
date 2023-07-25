@@ -26,6 +26,8 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
+    templateFormats: ["md", "njk", "liquid"],
+    pathPrefix: "/",
     dir: { input: 'src', output: '_site' }
   };
 };
