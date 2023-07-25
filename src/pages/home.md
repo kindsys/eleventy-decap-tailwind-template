@@ -1,7 +1,6 @@
 ---
 title: Home
 layout: layouts/base.njk
-cssFile: "../assets/main.css"
 permalink: /
 eleventyNavigation:
     key: Home

@@ -1,13 +1,6 @@
 ---
-title: Contact
 layout: layouts/base.njk
-cssFile: "../assets/main.css"
-permalink: /contact/
-eleventyNavigation:
-  key: Contact
-  order: 3
 ---
-
 <ul class="contact-list">
   {% for item in contact.items %}
   <li><a href="{{ item.link }}">{{ item.name }}</a></li>
