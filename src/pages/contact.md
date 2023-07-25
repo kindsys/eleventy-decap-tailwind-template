@@ -1,7 +1,6 @@
 ---
 title: Contact
 layout: layouts/contact.njk
-cssPath: "../assets/main.css"
 permalink: /contact/index.html
 eleventyNavigation:
   key: Contact

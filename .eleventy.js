@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPassthroughCopy('src/img')
   eleventyConfig.addPassthroughCopy("src/admin")
+  eleventyConfig.addPassthroughCopy("src/CNAME");
 
 
   const {
