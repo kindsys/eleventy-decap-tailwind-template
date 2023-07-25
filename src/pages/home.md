@@ -1,10 +1,12 @@
 ---
 title: Home
 layout: layouts/base.njk
-cssFile: "../assets/main.css"
 permalink: /
 eleventyNavigation:
     key: Home
     order: 1
 ---
-<p>Test content</p>
+
+## This is the homepage!
+
+Content can be added here.
