@@ -2,7 +2,6 @@
 title: Quick Start
 layout: layouts/base.njk
 permalink: /quickstart/
-cssFile: "../assets/main.css"
 eleventyNavigation:
     key: Quick Start
     order: 2

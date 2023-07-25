@@ -1,7 +1,7 @@
 ---
 title: Home
 layout: layouts/base.njk
-permalink: /home/
+permalink: /
 eleventyNavigation:
     key: Home
     order: 1
