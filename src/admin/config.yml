@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: kindsys/11ty-decap-starter.kind.systems
+  repo: kindsys/eleventy-decap-tailwind-template
   branch: main
   site_domain: deluxe-lamington-38577c.netlify.app
 
