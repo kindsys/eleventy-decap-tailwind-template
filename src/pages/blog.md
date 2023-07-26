@@ -1,10 +1,11 @@
 ---
-title: Blog
 layout: layouts/blog.njk
 permalink: /blog/index.html
 eleventyNavigation:
   key: Blog
-  order: 2
+  order: 3
+header_title: Blog
+header_subtitle: Example of how Decap collections can be used
 ---
 
 ## Main blog page content goes here
