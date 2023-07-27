@@ -8,4 +8,4 @@ header_title: Documentation
 header_subtitle: Learn the ins and outs of the template
 ---
 
-Documentation for 11ty, DecapCMS, and TailwindCSS
+
