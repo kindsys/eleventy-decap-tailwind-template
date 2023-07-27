@@ -529,6 +529,9 @@ hr {
         margin-top: 16px;
         margin-bottom: 16px;
     }
+ol {
+  list-style-type: decimal;
+}
 .static {
   position: static;
 }
@@ -996,3 +999,4 @@ hr {
     padding-bottom: 4rem;
   }
 }
+
