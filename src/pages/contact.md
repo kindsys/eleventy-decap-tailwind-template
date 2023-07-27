@@ -5,5 +5,3 @@ eleventyNavigation:
   key: Contact
   order: 5
 ---
-
-Extra Markdown for the contact page goes here
