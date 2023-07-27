@@ -1,4 +1,6 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const UglifyJS = require("uglify-js");
+const htmlmin = require("html-minifier");
 
 
 module.exports = function (eleventyConfig) {
@@ -27,9 +29,39 @@ module.exports = function (eleventyConfig) {
     }).toFormat("dd-MM-yy");
   });
 
+    // Minify JS
+    eleventyConfig.addFilter("jsmin", function(code) {
+      let minified = UglifyJS.minify(code);
+      if (minified.error) {
+        console.log("UglifyJS error: ", minified.error);
+        return code;
+      }
+      return minified.code;
+    });
+
+    // Minify HTML output
+    eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+      if (outputPath.indexOf(".html") > -1) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true
+        });
+        return minified;
+      }
+      return content;
+    });
+
   return {
     templateFormats: ["md", "njk", "liquid"],
+
     pathPrefix: "/",
-    dir: { input: 'src', output: '_site' }
+
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk",
+    dir: {
+      input: 'src', output: '_site'
+     }
   };
 };
