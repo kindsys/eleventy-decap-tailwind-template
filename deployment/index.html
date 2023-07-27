@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/assets/main.css" />
+</head>
+<body>
+  <nav class="flex items-center justify-between flex-wrap px-5 py-3 border-b">
+  <a href="/" class="font-semibold text-xl tracking-tight">11ty | DecapCMS | TailwindCSS</a>
+
+  
+  <ul>
+    
+      <li class="inline">
+        <a
+         href="/"
+         class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+         text-gray-700 hover:text-gray-900">
+         Home
+       </a>
+      </li>
+    
+      <li class="inline">
+        <a
+         href="/quickstart/"
+         class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+         text-gray-700 hover:text-gray-900">
+         Quick Start
+       </a>
+      </li>
+    
+      <li class="inline">
+        <a
+         href="/documentation/"
+         class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+         text-gray-700 hover:text-gray-900">
+         Documentation
+       </a>
+      </li>
+    
+      <li class="inline">
+        <a
+         href="/blog/"
+         class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+         text-gray-700 hover:text-gray-900">
+         Blog
+       </a>
+      </li>
+    
+      <li class="inline">
+        <a
+         href="/contact/"
+         class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+         text-gray-700 hover:text-gray-900">
+         Contact
+       </a>
+      </li>
+    
+ </ul>
+</nav>
+
+  <main>
+    
+<div class="relative bg-gray-900 py-24 sm:py-32">
+  <div class="mx-auto w-3/4 px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Deployment with GitHub Actions &amp; GitHub Pages</h2>
+      <p class="mt-6 text-lg leading-8 text-gray-300">Now that you’ve built a web site with Eleventy you might be ready to put it on the web for everyone to see! There are a bunch of different ways to do it!</p>
+    </div>
+  </div>
+</div>
+
+
+<section class="flex">
+  
+
+<aside id="sidebar-multi-level-sidebar" class="top-0 left-0 z-40 w-64 h-screen sticky transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+   <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+      <ul class="space-y-2 font-medium">
+         
+         <li>
+            <a href="/decapCMS/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <span class="ml-3">DecapCMS</span>
+            </a>
+         </li>
+         
+         <li>
+            <a href="/deployment/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <span class="ml-3">Deployment</span>
+            </a>
+         </li>
+         
+         <!-- Add more sidebar items as needed -->
+      </ul>
+   </div>
+</aside>
+
+  <div class="w-3/4 mx-auto py-6 px-4 sm:py-10 sm:px-6 lg:px-8">
+    <h2>Setting up GitHub Pages</h2>
+<h1>1. Now that our repository is created, we can enable GitHub Pages. Go to the page of the repository you've just created and click on the settings button in the top right. </br></br></h1>
+<h1>2. Click on the Pages button on the sidebar menu and select your default branch in the dropdown, this is probably <code>main</code> or <code>master</code>, leave <code>/(root)</code> as the selected folder. Click on <code>save</code> to confirm the settings.</br></br></h1>
+<h2>Build your website with GitHub Actions</h2>
+<h1>1. By default, GitHub pages uses Jekyll to generate your website. In our case, we're using Eleventy, so we want to inform GitHub Pages about this. To do this, create an empty file called .nojekyll and put it in the root directory. </br></br></h1>
+<h1>2. Next, create .github folder also in the root directory, and inside that folder, create another folder called workflows. In this folder, we put the workflows which GitHub Actions execute. </br></br></h1>
+<h1>3. We're going to create two workflows, the first one performs a build when a pull request is created. Create a file with the name <code>build.yml</code>. If your default branch is something other than main make sure to change this in the branches array.</br></br></h1>
+<p>This workflow only performs a build and does not yet deploy your changes. This way, there is a fail-safe solution.</br></br></p>
+<pre><code>build.yml
+
+name: Build on PR
+
+on:
+  pull_request:
+    branches: [ &quot;main&quot; ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['14.17.6']
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js $
+      uses: actions/setup-node@v3
+      with:
+        node-version: $
+        cache: 'npm'
+
+    - name: Install packages
+      run: npm ci
+
+    - name: Run development build
+      run: npm run build:dev
+</code></pre>
+</br>
+<h1>4. Next create <code>build-and-deploy.yml</code>. This workflow builds and deploys our website to GitHub Pages when a push is done on main branch, for example when you merge a PR. </br></br></h1>
+<pre><code>name: Build &amp; Deploy
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['14.17.6']
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js $
+        uses: actions/setup-node@v3
+        with:
+          node-version: $
+          cache: 'npm'
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Run production build
+        run: npm run build:prod
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: $
+          publish_dir: _site
+
+</code></pre>
+
+  </div>
+</section>
+
+
+
+
+  </main>
+  <script src="/assets/main.js"></script>
+</body>
+</html>
