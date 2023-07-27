@@ -9,7 +9,7 @@ header_title: Quick Start
 header_subtitle: Follow these instructions to get started with this template
 ---
 
-# 1. Clone the project
+## 1. Clone the project
 
 Navigate into the folder where you would like to host your project and run the following
 command to clone:
@@ -22,7 +22,7 @@ Move into the new directory using the `cd` command:
 
 ---
 
-# 2. Install Node.js and npm
+## 2. Install Node.js and npm
 
 This template requires Node.js version 14 or higher in order to run. You can check whether you have Node installed by running `node --version`
 in the terminal. If the command is not found or the version number is less than 14, you will need to download and install the software. You can
@@ -32,7 +32,7 @@ download the latest version of Node.js and npm with the following command:
 
 ---
 
-# 3. Install Eleventy
+## 3. Install Eleventy
 
 We can now install the static site generator Eleventy. `@11ty/eleventy` is published on npm, so we can install and save it
 to our project's `package.json` using:
@@ -41,7 +41,7 @@ to our project's `package.json` using:
 
 ---
 
-# 4. Run the template
+## 4. Run the template
 
 Use the following script to test your installations:
 
@@ -53,7 +53,7 @@ There should be multiple lines of output, but the last line should look like thi
 
 ---
 
-# 5. View the page
+## 5. View the page
 
 Now we can view our page on a local web server by using the `serve` script:
 
