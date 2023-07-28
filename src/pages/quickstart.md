@@ -45,7 +45,7 @@ to our project's `package.json` using:
 
 Use the following script to test your installations:
 
-`npm run build`
+`npm run build:dev`
 
 There should be multiple lines of output, but the last line should look like this if the run is successful:
 
