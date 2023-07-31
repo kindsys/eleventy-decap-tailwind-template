@@ -72,9 +72,9 @@ backend:
           - { label: "Date", name: "date", widget: "datetime" }
 ```
 </br></br>
-Save the files, commit, and push to GitHub. Done. Visit ***https://you.github.io/admin*** to see and access your CMS </br></br>
+Save the files, commit, and push to GitHub. Visit ***https://you.github.io/admin*** to see and access your CMS </br></br>
 ## Additional Resources:
 ---
 ***[Adding NetlifyCMS to existing GitHub Pages](https://cnly.github.io/2018/04/14/just-3-steps-adding-netlify-cms-to-existing-github-pages-site-within-10-minutes.html)***
 
-For more information about the fields field, please go to ***[DecapCMS](https://www.netlifycms.org/docs/add-to-your-site/#collections.)***
+For more information, please go to ***[DecapCMS](https://www.netlifycms.org/docs/add-to-your-site/#collections.)***

@@ -10,22 +10,22 @@ header_subtitle: Set up a CICD pipeline for your 11ty, DecapCMS, and TailwindCSS
 
 ## Setting up GitHub Pages
 ---
- 1. Now that our repository is created, we can enable GitHub Pages. Go to the page of the repository you've just created and click on the **Settings** button in the top right. </br></br>
+ 1. Now that your repository is created, we can enable GitHub Pages. Go to the page of the repository you've just created and click on the **Settings** button on the top right. </br></br>
 
- 2. Click on the **Pages** button on the sidebar menu and select your default branch in the dropdown, this is probably `main` or `master`, leave `/(root)` as the selected folder. Click on **save** to confirm the settings.</br></br>
+ 2. Click on the **Pages** button on the sidebar menu and select your default branch in the dropdown, this is probably `main` or `master`, leave `/(root)` as the selected folder. Click on **save** .</br></br>
 
 ## Build your website with GitHub Actions
 ---
-1. By default, GitHub pages uses Jekyll to generate your website. In our case, we're using 11ty, so we want to inform GitHub Pages.
-  - To do so, create an empty file called `.nojekyll` and put it in the root directory. </br></br>
+1. By default, GitHub pages uses Jekyll to generate websites. In our case, we're using 11ty, so we want to inform GitHub Pages.
+To do so, create an empty file called `.nojekyll` and put it in the root directory. </br></br>
 
-2. Create `.github` folder also in the ```root``` directory, and inside that folder, create another folder called `workflows` . In this folder, we put the workflows which GitHub Actions execute. </br></br>
+2. Create `.github` folder in the `root` directory, and inside that folder, create another folder called `workflows` . In this folder, we put the workflows which GitHub Actions execute. </br></br>
 
 3. We're going to create two workflows: </br></br>
 Create a file with the name  `build.yml`  </br></br>
 This workflow performs a build when a pull request is created.
 If your default branch is something other than `main` make sure to change this in the `branches` array. </br>
-This workflow only performs a build and does not yet deploy your changes.</br></br>
+This workflow only performs a build and doesn't deploy your changes.</br></br>
 
 ```
 build.yml
@@ -62,7 +62,7 @@ jobs:
 </br>
 
 Next create `build-and-deploy.yml`. </br></br>
-This workflow builds and deploys our website to GitHub Pages when a push is done on ```main``` branch, for example when you merge a PR. </br></br>
+This workflow builds and deploys our website to GitHub Pages when a push is done on the ```main``` branch, for example merging a pull request. </br></br>
 
 ```
 name: Build & Deploy
@@ -106,9 +106,9 @@ jobs:
 
 Once that is done we can push all the changes to our repository </br></br>
 
-5. Now head over to your repository on GitHub and click on the **Actions** tab on top. You should see the Build & Deploy workflow being executed, once that is done another workflow called ```pages-build-deployment``` is triggered and deploys the generated website to GitHub Pages.</br></br>
+5. Now head over to your repository on GitHub and click on the **Actions** tab. You should see the `Build & Deploy` workflow being executed, once that is done another workflow called `pages-build-deployment` is triggered and deploys the generated website to GitHub Pages.</br></br>
 
-6. After the Build & Deploy workflow is executed a new branch called `gh-pages` is auto-created. In this branch the generated output of your 11ty site will be stored. To be able to host the website properly we need to inform GitHub Pages about this.</br> Navigate to the **Settings** tab and select **Pages** in the list on the left. Change the branch from which your GitHub Pages site is currently being built to `gh-pages` and `root` and hit **save**.</br></br>
+6. After the `Build & Deploy` workflow is executed a new branch called `gh-pages` is auto-created. In this branch the generated output of your 11ty site will be stored. To be able to host the website properly we need to inform GitHub Pages about this.</br> Navigate to the **Settings** tab and select **Pages** in the list on the left. Change the branch from which your GitHub Pages site is currently being built to `gh-pages` and `root` and hit **save**.</br></br>
 
 7. The ```pages-build-deployment``` workflow will be automatically triggered again and after it has finished you can navigate to the URL where your website is published to see the final result.</br></br>
 
