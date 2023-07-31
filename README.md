@@ -67,7 +67,7 @@ Part of your output in the terminal should look like this:
 # Deployment
 
 ## ***Note***
-The current GitHub Actions `build.yml` and `build-and-deploy.yml` will fail until ***[ACTIONS_DEPLOY_KEY](https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-create-ssh-deploy-key) is created and set up.
+The current GitHub Actions `build.yml` and `build-and-deploy.yml` will fail until ***[ACTIONS_DEPLOY_KEY](https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-create-ssh-deploy-key)*** is created and set up.
 ## Setting up GitHub Pages
  1. Now that our repository is created, we can enable GitHub Pages. Go to the page of the repository you've just created and click on the **Settings** button in the top right. </br></br>
 
